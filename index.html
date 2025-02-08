@@ -19,6 +19,13 @@
     polaris-chip {
       margin: 16px;
     }
+    .control-wrapper {
+      margin: 20px;
+    }
+    #cardlist {
+      display: flex;
+      flex-wrap: wrap;
+    }
   </style>
   <title>polaris-chip / my-card</title>
 </head>
@@ -31,12 +38,66 @@
   <polaris-chip title="Sports are the only thing that matter"></polaris-chip>
   <polaris-chip title="Grants and donations"></polaris-chip>
 
-  <h1>my-card</h1>
-  <my-card></my-card>
+  
+
+  <div id="cardlist">
+    <!-- Card 1: Riolu -->
+    <my-card 
+      title="Riolu"
+      image="https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokedex/9/93/578px-Riolu_anime.png"
+      background="orange"
+      
+      buttonText1="10 Quick Charge"
+      buttonText2="Endure">
+    </my-card>
+
+    <!-- Card 2: Pikachu -->
+    <my-card 
+      title="Pikachu"
+      image="https://efour.b-cdn.net/uploads/default/original/3X/6/8/6849abb7456fce5720ec61b66a51024ed83fc5cf.jpeg"
+      background="yellow"
+      
+      buttonText1="Thunderbolt"
+      buttonText2="Quick Attack">
+    </my-card>
+
+    <!-- Card 3: Charizard -->
+    <my-card 
+      title="Charizard"
+      image="https://www.antiquetrader.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc4MDI0ODA5NTc2Mjc3NjEz/pokemon-charizardcropped2.jpg"
+      background="red"
+      
+      buttonText1="Flamethrower"
+      buttonText2="Fly">
+    </my-card>
+
+    <!-- Card 4: Bulbasaur -->
+    <my-card 
+      title="Bulbasaur"
+      image="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/04/pokemon-bulbasaur-card.jpg"
+      background="green"
+      
+      buttonText1="Vine Whip"
+      buttonText2="Leech Seed">
+    </my-card>
+
+    <!-- Card 5: Squirtle -->
+    <my-card 
+      title="Squirtle"
+      image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBIdNM-vePlkCSaHkE9kjCnWQxQFnSmw_mVg&s"
+      background="blue"
+      
+      buttonText1="Water Gun"
+      buttonText2="Bubble">
+    </my-card>
+  </div>
+
 
   <!-- this is what is bringing in the definition for this tag -->
+  <!-- <script type="module" src="./src/polaris-chip.js"></script> -->
   <script type="module" src="./src/polaris-chip.js"></script>
   <script type="module" src="./src/my-card.js"></script>
+
 </body>
 
 </html>
