@@ -14,7 +14,14 @@
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background-color: #ededed;
+      background-color: white;
+    }
+    my-card[fancy]{
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px;
+      background-color: white;
     }
     polaris-chip {
       margin: 16px;
@@ -32,7 +39,6 @@
 
 <body>
   <h1>polaris-chip</h1>
-  <!-- this is going to do whatever the tag's defaults are -->
   <polaris-chip title="News of Record" link="https://psu.edu/"></polaris-chip>
   <polaris-chip title="Faculty and Staff"></polaris-chip>
   <polaris-chip title="Sports are the only thing that matter"></polaris-chip>
@@ -41,60 +47,64 @@
   
 
   <div id="cardlist">
-    <!-- Card 1: Riolu -->
+    
     <my-card 
       title="Riolu"
       image="https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokedex/9/93/578px-Riolu_anime.png"
       background="orange"
-      
       buttonText1="10 Quick Charge"
-      buttonText2="Endure">
+      buttonText2="Endure"
+      fancy>
+      <p>Riolu is a Fighting-type Pokémon.</p>
     </my-card>
 
-    <!-- Card 2: Pikachu -->
+    
     <my-card 
       title="Pikachu"
       image="https://efour.b-cdn.net/uploads/default/original/3X/6/8/6849abb7456fce5720ec61b66a51024ed83fc5cf.jpeg"
       background="yellow"
-      
       buttonText1="Thunderbolt"
-      buttonText2="Quick Attack">
+      buttonText2="Quick Attack"
+      fancy>
+      <p>Pikachu is an Electric-type Pokémon.</p>
     </my-card>
 
-    <!-- Card 3: Charizard -->
+    
     <my-card 
       title="Charizard"
       image="https://www.antiquetrader.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc4MDI0ODA5NTc2Mjc3NjEz/pokemon-charizardcropped2.jpg"
       background="red"
-      
       buttonText1="Flamethrower"
-      buttonText2="Fly">
+      buttonText2="Fly"
+      fancy>
+      <p>Charizard is a Fire-type Pokémon.</p>
     </my-card>
 
-    <!-- Card 4: Bulbasaur -->
+    
     <my-card 
       title="Bulbasaur"
       image="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/04/pokemon-bulbasaur-card.jpg"
       background="green"
-      
       buttonText1="Vine Whip"
-      buttonText2="Leech Seed">
+      buttonText2="Leech Seed"
+      fancy>
+      <p>Bulbasaur is a Grass-type Pokémon.</p>
     </my-card>
 
-    <!-- Card 5: Squirtle -->
+    
     <my-card 
-      title="Squirtle"
+      title="Squirtle" 
       image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBIdNM-vePlkCSaHkE9kjCnWQxQFnSmw_mVg&s"
       background="blue"
-      
       buttonText1="Water Gun"
-      buttonText2="Bubble">
+      buttonText2="Bubble"
+      fancy>
+      <p>Squirtle is a Water-type Pokémon.</p>
     </my-card>
   </div>
 
 
-  <!-- this is what is bringing in the definition for this tag -->
-  <!-- <script type="module" src="./src/polaris-chip.js"></script> -->
+
   <script type="module" src="./src/polaris-chip.js"></script>
   <script type="module" src="./src/my-card.js"></script>
 

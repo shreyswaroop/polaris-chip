@@ -17,21 +17,30 @@ export class MyCard extends LitElement {
     this.title = "Riolu";
     this.image = "https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokedex/9/93/578px-Riolu_anime.png";
     this.background = "orange";
-    this.description = "A cute Pokémon known for its loyalty and fighting spirit.";
+    
     this.buttonText1 = "10 Quick Charge";
     this.buttonText2 = "Endure";
     this.link = "#";
+    this.fancy = false;
   }
 
   static get properties() {
     return {
+      /*
       title: { type: String },
       image: { type: String },
       background: { type: String },
       description: { type: String },
       buttonText1: { type: String },
       buttonText2: { type: String },
-      link: { type: String }
+      link: { type: String },
+      fancy: {type: Boolean, reflect: true},
+      */
+      title: { type: String },
+      image: { type: String },
+      buttonText1: { type: String },
+      buttonText2: { type: String },
+      fancy: { type: Boolean, reflect: true },
     };
   }
   
@@ -40,6 +49,11 @@ export class MyCard extends LitElement {
     return css`
       :host {
         display: block;
+      }
+      :host([fancy]) .card {
+        background-color: var(--my-card-fancy-bg, pink);
+        border: 2px solid pink;
+        box-shadow: 10px 5px 5px red;
       }
 
       .card {
@@ -70,8 +84,8 @@ export class MyCard extends LitElement {
       }
 
       .button {
-        margin-top: 50px;
-        padding: 1px 10px;
+        margin-top: 40px;
+        padding: 5px 10px;
         color: black;
         border: 2px solid black;
         border-radius: 8px;
@@ -82,8 +96,8 @@ export class MyCard extends LitElement {
       }
 
       .button2{
-        margin-top: 25px;
-        padding: 1px 55px;
+        margin-top: 20px;
+        padding: 5px 55px;
         color: black;
         border: 2px solid black;
         border-radius: 8px;
@@ -102,16 +116,31 @@ export class MyCard extends LitElement {
     `;
   }
 
+  openChanged(e) {
+    console.log(e);
+    if (e.target.getAttribute('open') !== null) {
+      this.fancy = true;
+    } else {
+      this.fancy = false;
+    }
+  }
+
   render() {
     return html`
-      <div class="card" style="background-color: ${this.background};">
+      <div class="card">
         <h2 class="card-title">${this.title}</h2>
         <img class="card-image" src="${this.image}" alt="${this.title}">
-        <p>${this.description}</p>
-        <button class="button">
-          <a href="${this.link}" target="_blank">${this.buttonText1}</a>
-        </button>
-        <button class="button2">${this.buttonText2}</button>
+        <details ?open="${this.fancy}" @toggle="${this.openChanged}">
+          <summary>${this.description}</summary>
+          <div>
+            <slot></slot>
+          </div>
+        </details>
+        <div class="buttons">
+          <a href="${this.link}" class="button">${this.buttonText1}</a>
+          
+          <button class="button">${this.buttonText2}</button>
+        </div>
       </div>
     `;
   }
