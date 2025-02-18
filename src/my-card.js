@@ -117,10 +117,11 @@ export class MyCard extends LitElement {
   }
 
   openChanged(e) {
-    console.log(e);
-    if (e.target.getAttribute('open') !== null) {
+    console.log(e.newState);
+    if (e.newState === "open") {
       this.fancy = true;
-    } else {
+    }
+    else {
       this.fancy = false;
     }
   }
